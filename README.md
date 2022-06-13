@@ -1,15 +1,25 @@
-# Basic Sample Hardhat Project
+# BuyMeACoffee solidity contract
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+Deploy a decentralized "Buy Me a Coffee" smart contract that allows visitors to send you (fake) ETH as tips and leave nice messages, using Alchemy, Hardhat, Ethers.js, and Ethereum Goerli.
 
-Try running some of the following tasks:
+![buymeacoffee](https://user-images.githubusercontent.com/55645692/173356747-eaebeeb4-1124-4118-838f-593bd637a997.png)
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+Deploy your contract with:
+
 ```
+npx hardhat run scripts/deploy.js
+```
+
+Run an example buy coffee flow locally with:
+
+```
+npx hardhat run scripts/buy-coffee.js
+```
+
+Once you have a contract deployed to Goerli testnet, grab the contract address and update the `contractAddress` variable in `scripts/withdraw.js`, then:
+
+```
+npx hardhat run scripts/withdraw.js
+```
+
+will allow you to withdraw any tips stored on the contract.
